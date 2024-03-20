@@ -5,6 +5,11 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {},
+  theme: {
+    fontFamily: {
+      'poppins': ['Poppins', 'sans'],
+      'open-sans': ['Open-sans', 'sans']
+    }
+  },
   plugins: [],
 }

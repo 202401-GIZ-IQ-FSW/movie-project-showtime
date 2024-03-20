@@ -1,9 +1,9 @@
-import Test from "@/components/Test"
+import HomePage from "@/components/HomePage"
 
 export default function Home() {
   return (
-    <div className="flex flex-col space-y-5 justify-center items-center py-36">
-      <Test />
+    <div>
+      <HomePage />
     </div>
   )
 }
