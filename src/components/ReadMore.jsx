@@ -19,7 +19,7 @@ function ReadMore({ bio }) {
             onClick={handleToggleBio}
             className="text-teal-400 underline hover:text-teal-300 active:text-teal-400"
           >
-            {showFullBio ? 'Read less' : 'Read more'}
+            {showFullBio ? 'Read les' : 'Read more'}
           </button>
         )}
       </p>
