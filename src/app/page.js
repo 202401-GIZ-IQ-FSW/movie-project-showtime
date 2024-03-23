@@ -1,12 +1,13 @@
+import NavBar from '@/components/navbar/NavBar'
 import React from 'react'
-import Actors from './components/Actors'
+import Actors from '@/components/Actors'
+import HeroSection from '@/components/Hero/Hero'
 
-function Home() {
+export default function Home() {
   return (
-    <div>
+    <main>
+      <HeroSection />
       <Actors />
-    </div>
+    </main>
   )
 }
-
-export default Home

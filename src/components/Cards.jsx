@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import { BsFillSuitHeartFill } from "react-icons/bs";
 
 function Cards({ actors }) {
   return (
@@ -18,25 +19,25 @@ function Cards({ actors }) {
               alt={`${actor.name}`}
               className="object-cover rounded-2xl"
             />
-            <div className="absolute rounded-2xl top-0 left-0 w-full h-full pl-3 bg-black bg-opacity-75 text-white transition-opacity duration-300 opacity-0 hover:opacity-100">
-              <h1 className="pt-8 pb-4 font-Roboto text-xl font-extrabold ">
+            <div className="absolute rounded-2xl top-0 left-0 w-full h-full p-1 bg-black bg-opacity-75 text-white transition-opacity duration-300 opacity-0 hover:opacity-100">
+              <h1 className="pt-8 pb-4 font-Roboto text-xl font-extrabold tracking-wider">
                 {actor.name}
               </h1>
               <div>
-                <h5 className="font-Roboto font-semibold text-sm mb-2">
+                <h5 className="font-Roboto font-normal text-sm mb-2">
                   Known for:
                 </h5>
                 {actor.known_for.map((movie) => (
                   <div
                     key={movie.id}
-                    className="font-Roboto font-medium text-sm pl-2 leading-5"
+                    className="flex flex-row gap-2 items-center font-Roboto font-light text-sm pl-2 leading-5"
                   >
-                    {movie.title && <span>- </span>}
+                    {movie.title && <span><BsFillSuitHeartFill className='text-teal-300' /></span>}
                     {movie.title}
                   </div>
                 ))}
-                <Link href={`/actors/${actor.id}`} className="absolute bottom-0 left-0 mb-5 ml-3 rounded-lg py-1 px-4 items-center justify-center font-medium bg-teal-500 hover:bg-teal-400 active:bg-teal-500">
-                  More
+                <Link href={`/actors/${actor.id}`} className="absolute bottom-0 left-0 mb-5 ml-3 rounded-lg py-1 px-4 items-center justify-center font-normal text-sm border border-gray-100 border-opacity-55 bg-teal-500 bg-opacity-55 hover:bg-teal-400 active:bg-teal-500 active:bg-opacity-55">
+                  View More
                 </Link>
               </div>
             </div>
