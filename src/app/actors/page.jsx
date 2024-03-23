@@ -1,8 +1,8 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import { fetchData } from '@/_utils/fetchData'
-import Cards from './Cards'
-import NavBar from './navbar/NavBar'
+import Cards from '../../components/Cards'
+import NavBar from '../../components/navbar/NavBar'
 
 function Actors() {
   const [gitActors, setGitActors] = useState([])
@@ -22,7 +22,6 @@ function Actors() {
 
   return (
     <div className="flex flex-row">
-      <NavBar />
       <Cards actors={gitActors} />
     </div>
   )
