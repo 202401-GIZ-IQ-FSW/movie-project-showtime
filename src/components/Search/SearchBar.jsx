@@ -20,9 +20,18 @@ const SearchBar = () => {
     setIsLoading(true)
 
     try {
-      const endpoint = `/search/movie?query=${value}`
-      const data = await fetchData(endpoint)
-      setSearchResults(data.results)
+
+      const endpoints =[
+        `/search/movie?query=${value}` ,
+        `/search/tv?query=${value}`,
+        `/search/person?query=${value}`
+      
+      ] 
+      const data = await Promise.all(endpoints.map(endpoint=>  fetchData(endpoint)))  
+      const combinedResults = data.reduce((acc, curr) => acc.concat(curr.results), [])
+
+      // const data = await fetchData(endpoint)
+      setSearchResults(combinedResults)
     } catch (error) {
       console.error('Search error:', error)
     }
@@ -53,7 +62,7 @@ const SearchBar = () => {
       <input
         type="search"
         id="search"
-        className="block w-full p-3 pl-10 text-sm text-white rounded-lg border-gray-600 placeholder-gray-400 bg-transparent border-opacity-50" // Adjusted styles for transparency and border opacity
+        className="block w-full p-3 pl-10 text-sm text-black rounded-lg border-gray-600 placeholder-gray-400 "
         placeholder="Search..."
         value={searchTerm}
         onChange={handleSearchChange}

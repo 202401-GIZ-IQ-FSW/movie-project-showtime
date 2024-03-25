@@ -22,7 +22,7 @@ const SearchResults = ({ results, closeDropdown }) => {
             className="w-16 h-20 rounded-sm"
           />
           <div>
-            <p className="text-sm font-semibold">{result.title}</p>
+            <p className="text-sm font-semibold">{result.title || result.name}</p>
             <p className="text-xs text-gray-500">
               {result.release_date && `${result.release_date.substring(0, 4)}`}
             </p>
